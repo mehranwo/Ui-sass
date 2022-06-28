@@ -1,0 +1,41 @@
+@mixin wrapped {
+  width: 90%;
+  margin: 20px auto;
+}
+@mixin wrapped-2 {
+  width: 80%;
+  margin: 20px auto;
+}
+@mixin wrapped-3 {
+  width: 70%;
+  margin: 50px auto;
+}
+@mixin flex-boxed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin hoverEffect {
+  background-color: transparent;
+  width: 50%;
+  height: 6px;
+  border-radius: 3px;
+}
+@mixin animate {
+  animation: animated 3s linear infinite alternate;
+}
+@mixin xs-screen {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+@mixin sm-screen {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin md-screen {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}

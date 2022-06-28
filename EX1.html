@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./EX1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="">
+    <div class="progressBar">
+      <div class="progress"></div>
+    </div>
+    <div class="activeBtn"><i class="fas fa-arrow-alt-circle-left"></i></div>
+    <div class="navigate">
+      <button class="nav"><i class="fas fa-arrow-alt-circle-up"></i></button>
+      <button class="nav"></button>
+      <button class="nav"></button>
+      <button class="nav"></button>
+      <button class="nav"></button>
+      <button class="nav"></button>
+      <button class="nav"><i class="fas fa-arrow-alt-circle-down"></i></button>
+    </div>
+    <header>
+      <div class="categories">
+        <div class="logo">
+          <img src="./asset/logo.svg" alt="Company Logo" />
+          <span>Software</span>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Menu <span><i class="fas fa-caret-down"></i></span>
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Feature</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Integration</a>
+            <a href="#">Blog</a>
+            <a href="#">Inner Pages</a>
+          </div>
+        </div>
+        <div class="category">
+          <div>Feature</div>
+          <div class="categoryHover"></div>
+        </div>
+        <div class="category">
+          <div>Testimonials</div>
+          <div class="categoryHover"></div>
+        </div>
+        <div class="category">
+          <div>Integration</div>
+          <div class="categoryHover"></div>
+        </div>
+        <div class="category">
+          <div>Blog</div>
+          <div class="categoryHover"></div>
+        </div>
+        <div class="category">
+          <div>Inner Pages</div>
+          <div class="categoryHover"></div>
+        </div>
+      </div>
+      <div class="settings">
+        <div>Login</div>
+        <div>Register</div>
+        <div class="darkBtn"><i class="fas fa-sun"></i></div>
+        <div class="settingsLogo">
+          <i class="fas fa-cog"></i>
+        </div>
+        <div class="massage">
+          <div class="massageBtn">
+            <i class="fas fa-comment-alt"></i>
+          </div>
+          <div class="massageBox">
+            <div class="header">
+              <div>
+                <div class="avatar">
+                  <img src="./asset/customer-3.jpg" alt="" />
+                </div>
+                <div class="status"></div>
+              </div>
+              <div>Live Chat</div>
+              <div class="closeBtn"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="chatContainer" id="chatContainer"></div>
+            <div class="chatBox">
+              <input id="chatTxt" type="text" placeholder="text..." />
+              <div class="sendBtn"><img src="./asset/Send.svg" alt="" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="leadBanner">
+      <div class="background1"><img src="./asset/Banner1.svg" alt="" /></div>
+      <div class="background2"></div>
+      <div class="wave1"><img src="./asset/wave1.svg" alt="" /></div>
+      <div class="wave2"><img src="./asset/wave2.svg" alt="" /></div>
+      <div class="wave3"><img src="./asset/wave3.svg" alt="" /></div>
+      <div class="bannerTitle">
+        <div class="title">Lorem, ipsum dolor.</div>
+        <div>
+          Lorem, ipsum dolor sit amet consectetur <br />
+          adipisicing elit. Quasi, ab?
+        </div>
+        <div class="bannerTitleOpt">
+          <div class="bannerBtn">LEARN MORE</div>
+          <div class="bannerBtn">GET STARTED</div>
+        </div>
+      </div>
+      <div class="bannerBtnGroup">
+        <div class="btn">
+          <div>
+            <p>Business Solution</p>
+            Lorem ipsum dolor sit amet.
+          </div>
+        </div>
+        <div class="btn">
+          <div>
+            <p>Free Project Quote</p>
+            Lorem ipsum dolor sit amet
+          </div>
+        </div>
+        <div class="btn">
+          <div>
+            <p>Nulla Lobortis Nunc</p>
+            Lorem ipsum dolor sit amet.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logoGroup">
+      <div class="logoGroup-sec1">
+        <div class="dummyLogo">
+          <img src="./asset/logo_dummy6.svg" alt="" />
+        </div>
+        <div class="dummyLogo">
+          <img src="./asset/logo_dummy5.svg" alt="" />
+        </div>
+        <div class="dummyLogo">
+          <img src="./asset/logo_dummy4.svg" alt="" />
+        </div>
+        <div class="dummyLogo">
+          <img src="./asset/logo_dummy3.svg" alt="" />
+        </div>
+        <div class="dummyLogo">
+          <img src="./asset/logo_dummy2.svg" alt="" />
+        </div>
+        <div class="dummyLogo"><img src="./asset/logo_dummy.svg" alt="" /></div>
+      </div>
+      <div class="logoGroup-sec2">
+        <div class="dummyLogoSocial">
+          <div class="title">+200M</div>
+          <div class="infoGroup">
+            <img src="./asset/ios-cloud-download.svg" alt="" />
+            <div class="info">DOWNLOAD</div>
+          </div>
+        </div>
+        <div class="dummyLogoSocial">
+          <div class="title">+80M</div>
+          <div class="infoGroup">
+            <img src="./asset/ios-people.svg" alt="" />
+            <div class="info">ACTIVE USERS</div>
+          </div>
+        </div>
+        <div class="dummyLogoSocial">
+          <div class="title">+180K</div>
+          <div class="infoGroup">
+            <img src="./asset/social-buffer.svg" alt="" />
+            <div class="info">PROVIDERS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="midBanner">
+      <div class="background3"><img src="./asset/Rectangle.svg" alt="" /></div>
+      <div class="midBanner-sec1">
+        <div>
+          <img src="./asset/Feature1.svg" alt="" />
+        </div>
+        <div class="infoCard">
+          <div class="title">Lorem, ipsum dolor</div>
+          <div class="clip"></div>
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+          <div class="midBannerBtn">SEE DETAIL</div>
+        </div>
+      </div>
+      <div class="midBanner-sec2">
+        <div class="infoCard">
+          <div class="title">sit amet consectetur</div>
+          <div class="clip"></div>
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+          <div class="midBannerBtn">SEE DETAIL</div>
+        </div>
+        <div>
+          <img src="./asset/Feature2.svg" alt="" />
+        </div>
+      </div>
+      <div class="midBanner-sec3">
+        <div class="title">consectetur adipisicing elit</div>
+        <div class="clip"></div>
+        <div>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia,
+          sunt!
+        </div>
+        <div class="imgBox"><img src="./asset/Feature3.svg" alt="" /></div>
+      </div>
+      <div class="midBanner-sec4">
+        <div>
+          <div class="title">consectetur adipisicing</div>
+          <div class="clip"></div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur <br />
+            adipisicing elit. Ad, corrupti.
+          </div>
+        </div>
+        <div class="line"></div>
+        <div>
+          <div class="title">consectetur adipisicing</div>
+          <div class="clip"></div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur <br />
+            adipisicing elit. Ad, corrupti.
+          </div>
+        </div>
+      </div>
+      <div class="midBanner-sec5">
+        <div class="line"></div>
+        <div class="navigations">
+          <div class="navigations-info">
+            <div class="info-title v">lorem ipsum dolor sit</div>
+            <div>lorem ipsum dolor sit</div>
+          </div>
+
+          <img src="./asset/1.png" alt="" />
+          <div class="dot"></div>
+        </div>
+        <div class="navigations">
+          <div class="dot g"></div>
+          <img src="./asset/3.png" alt="" />
+          <div class="navigations-info">
+            <div class="info-title g">lorem ipsum dolor sit</div>
+            <div>lorem ipsum dolor sit</div>
+          </div>
+        </div>
+        <div class="navigations">
+          <div class="navigations-info">
+            <div class="info-title c">lorem ipsum dolor sit</div>
+            <div>lorem ipsum dolor sit</div>
+          </div>
+          <img src="./asset/4.png" alt="" />
+          <div class="dot c"></div>
+        </div>
+        <div class="navigations">
+          <div class="dot"></div>
+          <img src="./asset/2.png" alt="" />
+          <div class="navigations-info">
+            <div class="info-title v">lorem ipsum dolor sit</div>
+            <div>lorem ipsum dolor sit</div>
+          </div>
+        </div>
+        <div class="navigations">
+          <div class="navigations-info">
+            <div class="info-title g">lorem ipsum dolor sit</div>
+            <div>lorem ipsum dolor sit</div>
+          </div>
+          <img src="./asset/5.png" alt="" />
+          <div class="dot g"></div>
+        </div>
+        <div class="navigations">
+          <div class="dot c"></div>
+          <img src="./asset/6.png" alt="" />
+          <div class="navigations-info">
+            <div class="info-title c">lorem ipsum dolor sit</div>
+            <div>lorem ipsum dolor sit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="botBanner">
+      <div class="background3"></div>
+      <div class="main">
+        <div class="botBannerInfo">
+          <div class="title">
+            Lorem ipsum dolor <br />
+            sit ipsum
+          </div>
+          <div class="description">
+            <div class="author">
+              <img src="./asset/17.png" alt="" />
+              <div>
+                <p>Lorem ipsum</p>
+                <p>Lorem, ipsum dolor</p>
+              </div>
+            </div>
+            <div class="subtitle">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit
+              facere sit optio delectus sed placeat corrupti laborum a ad quam.
+            </div>
+          </div>
+        </div>
+        <div class="botBannerLogo">
+          <div class="rows">
+            <div><img src="./asset/10.png" alt="" /></div>
+            <div><img src="./asset/12.png" alt="" /></div>
+            <div><img src="./asset/13.png" alt="" /></div>
+          </div>
+          <div class="rows">
+            <div><img src="./asset/14.png" alt="" /></div>
+            <div><img src="./asset/15.png" alt="" /></div>
+            <div><img src="./asset/16.png" alt="" /></div>
+          </div>
+          <div class="rows">
+            <div><img src="./asset/9.png" alt="" /></div>
+            <div><img src="./asset/8.png" alt="" /></div>
+            <div><img src="./asset/11.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="botBannerBtn">
+        <div class="background5"><img src="./asset/card.svg" alt="" /></div>
+        <div class="descriptionBtn">
+          <div>what are you waiting for?</div>
+          <div class="btn">Get Started</div>
+        </div>
+      </div>
+    </div>
+    <div class="events">
+      <div class="eventCard">
+        <img src="./asset/img02.png" alt="" />
+        <div class="eventInfo">
+          <div class="eventTitle">EVENT</div>
+          <div class="eventText">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque,
+            fuga!
+          </div>
+          <div class="eventSub">Read More</div>
+        </div>
+      </div>
+      <div class="eventCard">
+        <img class="headerWave" src="./asset/img01.png" alt="" />
+        <div class="eventInfo">
+          <div class="eventTitle">EVENT</div>
+          <div class="eventText">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque,
+            fuga!
+          </div>
+          <div class="eventSub">Read More</div>
+        </div>
+      </div>
+    </div>
+    <div class="eventPages">
+      <span></span><span></span><span></span><span></span><span></span
+      ><span></span>
+    </div>
+    <footer>
+      <div class="mask"><div class="dakhel"></div></div>
+      <!-- <img class="waves" src="./asset/footerWave.svg" alt="" /> -->
+      <div class="wave1"><img src="./asset/wave1.svg" alt="" /></div>
+      <div class="wave2"><img src="./asset/wave2.svg" alt="" /></div>
+      <div class="wave3"><img src="./asset/wave3.svg" alt="" /></div>
+      <div class="search">
+        <div class="title">
+          Lorem ipsum dolor, sit amet consectetur adipisicing
+        </div>
+        <div class="searchField">
+          <input type="text" placeholder="Your Email" />
+          <button>SUBSCRIBE</button>
+        </div>
+      </div>
+      <div class="contacts">
+        <div>
+          <div class="logo">
+            <img src="./asset/logo.svg" alt="Company Logo" />
+            <span>Software</span>
+          </div>
+          <div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae,
+            pariatur.
+          </div>
+          <div>2022 all rights reserved.</div>
+        </div>
+        <div>
+          <div class="contactTitle">Company</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+        </div>
+        <div>
+          <div class="contactTitle">Services</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+        </div>
+        <div>
+          <div class="contactTitle">Recourses</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+          <div>Lorem ipsum dolor sit.</div>
+        </div>
+        <div class="contactLogoGroup">
+          <div class="contactLogo">
+            <div><img src="./asset/facebook.svg" alt="" /></div>
+            <div><img src="./asset/instagram.svg" alt="" /></div>
+            <div><img src="./asset/linkedin.svg" alt="" /></div>
+            <div><img src="./asset/twitter.svg" alt="" /></div>
+          </div>
+          <div class="selectMenu">
+            <select name="Language" id="Language">
+              <option value="Eng">
+                🌐
+                <i><img src="./asset/android-globe.svg" alt="" /></i>
+                <span> English-ENG</span>
+              </option>
+              <option value="Per">
+                🌐
+                <span>Persian-PER</span>
+              </option>
+              <option value="arb">
+                🌐
+                <span>Arabic-ARB</span>
+              </option>
+              <option value="spn">
+                🌐
+                <span>Spanish-SPN</span>
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./EX1.js"></script>
+  </body>
+</html>

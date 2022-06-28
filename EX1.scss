@@ -1,0 +1,1273 @@
+@import "EX1mixin";
+@import "EX1variables";
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&family=Cairo:wght@500&family=Open+Sans:ital,wght@0,300;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&family=Cairo:wght@500&family=Open+Sans:wght@300&display=swap");
+html {
+  scroll-behavior: smooth;
+  font-family: "Open Sans";
+}
+* {
+  font-size: $text-md;
+  overflow-x: hidden;
+  margin: 0%;
+}
+body {
+  &.dark {
+    background-color: black;
+    color: white;
+  }
+  .progressBar {
+    background-color: $carbon;
+    width: 100%;
+    height: 5px;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    .progress {
+      width: 0;
+      height: 5px;
+      background-color: $lime;
+    }
+  }
+  .activeBtn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    background-color: $lightViolet;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transform: translateY(45vh);
+    @include flex-boxed;
+    justify-content: center;
+    background-color: $darkViolet;
+    color: white;
+    border: 3px dashed white;
+    border-radius: 50%;
+    opacity: 0.8;
+    &:hover {
+      box-shadow: 0 0 10px black;
+    }
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    &.active2 {
+      transform: translate(-55px, 45vh) rotate(180deg);
+    }
+  }
+  .navigate {
+    @include flex-boxed;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $lightViolet;
+    padding: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transform: translate(60px, 30vh);
+    transition: all 1s ease-in-out;
+
+    &.active {
+      transform: translate(0, 30vh);
+    }
+    > button {
+      @include flex-boxed;
+      justify-content: center;
+      margin: 10px 0;
+      background-color: $darkViolet;
+      color: white;
+      border: 3px dashed white;
+      border-radius: 50%;
+      padding: 5px;
+      opacity: 0.8;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 0 10px black;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+.title {
+  font-size: $text-xl;
+  font-weight: bold;
+  @include sm-screen {
+    font-size: $text-xsl;
+  }
+}
+.logo {
+  @include flex-boxed;
+  justify-content: flex-start;
+  font-size: $text-lg;
+  font-weight: bold;
+  color: black;
+  &.dark-txt {
+    color: white;
+  }
+  @include sm-screen {
+    font-size: $text-xs;
+  }
+}
+header {
+  @include wrapped;
+  @include flex-boxed;
+  font-size: $text-md;
+  @include sm-screen {
+    font-size: $text-xs;
+  }
+  color: $carbon;
+
+  .categories {
+    @include flex-boxed;
+
+    > div {
+      padding-right: 30px;
+    }
+    .category {
+      @include md-screen {
+        display: none;
+      }
+      &.dark-txt {
+        color: white;
+      }
+      @include flex-boxed;
+      flex-direction: column;
+      justify-content: center;
+      &:hover {
+        color: $violet;
+        cursor: pointer;
+      }
+      .categoryHover {
+        @include hoverEffect;
+      }
+    }
+    .category:hover .categoryHover {
+      background-color: $violet;
+    }
+  }
+  .settings {
+    @include flex-boxed;
+    font-weight: bold;
+    &.dark-txt {
+      color: white;
+    }
+    > div {
+      padding: 10px 20px;
+      cursor: pointer;
+      @include xs-screen {
+        padding-right: 0px;
+        font-size: $text-xs;
+      }
+      &:hover {
+        background-color: $violet;
+        border-radius: 50px;
+        color: white;
+      }
+    }
+    :nth-child(4) {
+      border-left: 2px solid $carbon;
+      padding: 10px;
+      margin-left: 10px;
+      @include xs-screen {
+        padding-right: 0px;
+        font-size: $text-xs;
+      }
+      &:hover {
+        background-color: transparent;
+        border-radius: 0;
+        color: $carbon;
+      }
+    }
+    .darkBtn {
+      &:hover {
+        background-color: transparent;
+        border-radius: 0;
+        color: $carbon;
+      }
+    }
+    .massage {
+      &:hover {
+        background-color: transparent;
+        border-radius: 0;
+        color: $carbon;
+      }
+      .massageBox {
+        position: absolute;
+        @include flex-boxed;
+        flex-direction: column;
+        background-color: white;
+        width: 410px;
+        right: 1%;
+        height: 700px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        z-index: 10;
+        transform: translateX(150%);
+        display: none;
+        transition: all 0.5s ease-in-out;
+        &.dark {
+          background-color: rgb(43, 43, 43);
+        }
+        .header {
+          @include flex-boxed;
+
+          > div {
+            padding: 0 20px;
+          }
+          > div:first-child {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            img {
+              width: 80%;
+              height: 80%;
+              border-radius: 50%;
+              border: 2px dashed white;
+            }
+            .status {
+              position: absolute;
+              right: 20%;
+              top: 10%;
+              padding: 6px;
+              margin-right: 5px;
+              border: 1px solid white;
+              border-radius: 50%;
+              background-color: $lime;
+              animation: blink 1.5s linear infinite alternate;
+            }
+          }
+          color: white;
+          height: 70px;
+          width: 100%;
+          background-color: $violet;
+          > div:first-child {
+            @include flex-boxed;
+          }
+          .closeBtn:hover {
+            color: black;
+          }
+        }
+        .chatContainer {
+          width: 90%;
+          height: 500px;
+          background-color: $lightViolet;
+          border-radius: 20px;
+          @include flex-boxed;
+          flex-direction: column;
+          justify-content: flex-start;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          &::-webkit-scrollbar {
+            width: 5px;
+          }
+
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: $darkViolet;
+            outline: 1px solid $violet;
+          }
+
+          .userMassage {
+            border: 3px solid $darkViolet;
+            background-color: white;
+            border-radius: 10px;
+            min-width: 150px;
+            margin: 10px;
+            padding: 5px;
+            min-height: 40px;
+            min-width: 200px;
+            @include flex-boxed;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            align-self: flex-end;
+          }
+          .received {
+            border: 3px solid white;
+            background-color: $darkViolet;
+            color: white;
+            border-radius: 10px;
+            min-width: 150px;
+            margin: 10px;
+            padding: 5px;
+            min-height: 40px;
+            min-width: 200px;
+            @include flex-boxed;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            align-self: flex-start;
+          }
+        }
+        .chatBox {
+          width: 90%;
+          height: 10%;
+          margin-bottom: 2%;
+          @include flex-boxed;
+          input {
+            border: 3px solid $darkViolet;
+            padding: 5px 30px;
+            border-radius: 50px;
+          }
+          .sendBtn {
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              transform: rotate(-90deg);
+            }
+          }
+        }
+        &.activeChat {
+          transform: translateX(0%);
+          @include flex-boxed;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+.dropdown {
+  display: none;
+  @include md-screen {
+    display: inline-block;
+  }
+  button {
+    background-color: $violet;
+    border-radius: 20px;
+    width: 120px;
+    color: white;
+    padding: 10px;
+    font-size: $text-md;
+    border: none;
+    cursor: pointer;
+    &:hover,
+    :focus {
+      background-color: $darkViolet;
+    }
+    @include sm-screen {
+      font-size: $text-xs;
+      width: 80px;
+    }
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $lightVioletSharp;
+    min-width: 110px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    border-radius: 20px;
+    &.show {
+      display: block;
+    }
+
+    a {
+      padding: 12px 16px;
+      text-decoration: none;
+      border-bottom: 2px solid $violet;
+      display: block;
+      &:hover {
+        color: white;
+        background-color: $darkViolet;
+      }
+    }
+  }
+}
+.leadBanner {
+  overflow: hidden;
+  position: relative;
+  margin-top: 50px;
+  height: 750px;
+  width: 100%;
+  @include md-screen {
+    height: 850px;
+  }
+  .background1 {
+    position: absolute;
+    height: 300px;
+    top: 0;
+    right: -35%;
+    z-index: -1;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    @include md-screen {
+      height: 180px;
+    }
+    @include sm-screen {
+      opacity: 0.3;
+    }
+  }
+  .background2 {
+    position: absolute;
+    padding: 550px 600px;
+    border-radius: 50%;
+    background-color: #ffecb3ad;
+    top: 30%;
+    right: -20%;
+    z-index: -2;
+  }
+  .wave1 {
+    position: absolute;
+    width: 110%;
+    bottom: 0px;
+    z-index: 1;
+    @include animate;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .wave2 {
+    position: absolute;
+    width: 110%;
+    bottom: -10px;
+    z-index: 2;
+    @include animate;
+    animation: backwards;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .wave3 {
+    position: absolute;
+    width: 110%;
+    bottom: -10px;
+    z-index: 3;
+    @include animate;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bannerBtnGroup {
+    color: black;
+    @include wrapped-2;
+    @include flex-boxed;
+    justify-content: space-evenly;
+    &.dark-txt {
+      color: white;
+    }
+    @include md-screen {
+      flex-direction: column;
+      width: 90%;
+    }
+    .btn {
+      @include md-screen {
+        width: 80%;
+      }
+      @include flex-boxed;
+      justify-content: center;
+      flex-direction: column;
+      width: 30%;
+      height: 100px;
+      font-size: $text-md;
+      border: none;
+      background-color: transparent;
+      border: 5px solid transparent;
+      p {
+        font-size: $text-lg;
+      }
+      &:hover {
+        border-color: $violet;
+        cursor: pointer;
+        p {
+          color: $violet;
+        }
+        border-radius: 50px;
+      }
+    }
+  }
+}
+.bannerTitle {
+  @include wrapped;
+  @include flex-boxed;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  .bannerBtn {
+    margin: 30px 0px;
+
+    color: $violet;
+    &:hover {
+      color: white;
+      background-color: $lime;
+      border-radius: 50px;
+    }
+  }
+}
+.bannerTitle {
+  @include wrapped;
+  @include flex-boxed;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  > div {
+    margin-top: 50px;
+  }
+}
+.bannerTitleOpt {
+  @include flex-boxed;
+  margin-top: 0px !important;
+  .bannerBtn {
+    margin-right: 40px;
+    padding: 10px;
+    color: $violet;
+    &:hover {
+      color: white;
+      background-color: $lime;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+  }
+}
+.logoGroup {
+  @include wrapped-3;
+  @include flex-boxed;
+  flex-direction: column;
+  .logoGroup-sec1 {
+    width: 100%;
+    @include flex-boxed;
+    .dummyLogo {
+      border-radius: 50%;
+      background-color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+    @include sm-screen {
+      div:nth-child(2n) {
+        display: none;
+      }
+    }
+  }
+  .logoGroup-sec2 {
+    width: 100%;
+    @include flex-boxed;
+    @include sm-screen {
+      flex-direction: column;
+    }
+    margin-top: 50px;
+    .dummyLogoSocial {
+      color: $carbon;
+      @include flex-boxed;
+      flex-direction: column;
+      .title {
+        font-size: $text-xl;
+        font-weight: bold;
+        color: $darkViolet;
+        margin-bottom: 50px;
+        @include sm-screen {
+          margin-top: 50px;
+          margin-bottom: 0;
+        }
+      }
+      .infoGroup {
+        @include flex-boxed;
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        .info {
+          font-weight: bold;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+.clip {
+  width: 60px;
+  height: 10px;
+  background-color: $violet;
+  border-radius: 50px;
+}
+.midBanner {
+  position: relative;
+  margin-top: 150px;
+  height: 3000px;
+  @include md-screen {
+    height: 3200px;
+  }
+  @include sm-screen {
+    height: 4000px;
+  }
+  .background3 {
+    position: absolute;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    z-index: -1;
+  }
+  .midBanner-sec1 {
+    @include wrapped;
+    @include flex-boxed;
+    @include sm-screen {
+      flex-direction: column;
+      padding-bottom: 20px;
+      border-bottom: 5px solid $darkViolet;
+      margin-bottom: 50px;
+    }
+    margin-bottom: 200px;
+    > div {
+      width: 45%;
+      height: 350px;
+      overflow: hidden;
+      @include sm-screen {
+        width: 100%;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .infoCard {
+      @include flex-boxed;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      @include sm-screen {
+        align-items: center;
+      }
+      .clip {
+        width: 60px;
+        height: 10px;
+        background-color: $violet;
+        border-radius: 50px;
+      }
+      .midBannerBtn {
+        color: white;
+        background-color: $lime;
+        padding: 10px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        &:hover {
+          background-color: $darkLime;
+        }
+      }
+    }
+  }
+  .midBanner-sec2 {
+    @include wrapped;
+    @include flex-boxed;
+    @include sm-screen {
+      flex-direction: column-reverse;
+      margin-bottom: 50px;
+      padding-bottom: 20px;
+      border-bottom: 5px solid $darkViolet;
+    }
+    margin-bottom: 200px;
+    > div {
+      width: 45%;
+      height: 350px;
+      overflow: hidden;
+      @include sm-screen {
+        width: 100%;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .infoCard {
+      @include flex-boxed;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-evenly;
+      text-align: right;
+      @include sm-screen {
+        align-items: center;
+        text-align: left;
+      }
+      .midBannerBtn {
+        color: white;
+        background-color: $lime;
+        padding: 10px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        &:hover {
+          background-color: $darkLime;
+        }
+      }
+    }
+  }
+  .midBanner-sec3 {
+    @include wrapped;
+    @include flex-boxed;
+    @include sm-screen {
+      padding-bottom: 70px;
+      border-bottom: 5px solid $darkViolet;
+      margin-bottom: 50px;
+    }
+    flex-direction: column;
+    margin-bottom: 20px;
+    > div {
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .imgBox {
+      overflow: hidden;
+      width: 80%;
+      height: 80%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .midBanner-sec4 {
+    @include wrapped-3;
+    @include flex-boxed;
+    @include md-screen {
+      flex-direction: column;
+    }
+    .line {
+      z-index: -1;
+      width: 5px;
+      height: 200px;
+      background-color: $lime;
+      opacity: 0.7;
+      border-radius: 50px;
+      @include md-screen {
+        display: none;
+      }
+    }
+    > div {
+      @include md-screen {
+        width: 100%;
+        margin-bottom: 100px;
+      }
+      @include flex-boxed;
+      flex-direction: column;
+      justify-content: center;
+      > div {
+        margin-top: 50px;
+        @include md-screen {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .midBanner-sec5 {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    @include flex-boxed;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @include md-screen {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    .line {
+      position: absolute;
+      z-index: -1;
+      width: 12px;
+      height: 100%;
+      left: 49.3%;
+      background-color: $lime;
+      opacity: 0.7;
+      border-radius: 50px;
+      @include md-screen {
+        left: 10%;
+      }
+      @include sm-screen {
+        display: none;
+      }
+    }
+    > div:nth-child(2n + 1) {
+      align-self: flex-end;
+      @include md-screen {
+        align-self: center;
+      }
+    }
+    .navigations {
+      @include flex-boxed;
+      width: 50%;
+      padding: 0 12px;
+      justify-content: flex-start;
+      @include md-screen {
+        flex-direction: row;
+      }
+      @include sm-screen {
+        flex-direction: column;
+        &:nth-child(2n) {
+          flex-direction: column-reverse;
+        }
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 100% 0% 100% 0% / 100% 0% 100% 100%;
+        border: 5px dashed rgba(0, 0, 0, 0.571);
+        background-color: white;
+        cursor: pointer;
+      }
+      .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $violet;
+        @include md-screen {
+          position: absolute;
+          left: 9.5%;
+        }
+        @include sm-screen {
+          display: none;
+        }
+        &.g {
+          background-color: $lime;
+        }
+        &.c {
+          background-color: $canary;
+        }
+      }
+      .navigations-info {
+        .info-title {
+          font-size: $text-lg;
+          &.g {
+            color: $lime;
+          }
+          &.v {
+            color: $violet;
+          }
+          &.c {
+            color: $canary;
+          }
+        }
+      }
+    }
+  }
+}
+.botBanner {
+  @include flex-boxed;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  .background3 {
+    position: absolute;
+    width: 1000px;
+    height: 740px;
+    left: -10%;
+    top: 0;
+    background-color: $violet;
+    opacity: 0.2;
+    border-radius: 68% 32% 65% 34% / 36% 34% 32% 66%;
+    z-index: -1;
+  }
+  .main {
+    @include wrapped;
+    @include flex-boxed;
+    @include md-screen {
+      flex-direction: column;
+    }
+    .botBannerInfo {
+      margin-top: 50px;
+      @include md-screen {
+        overflow: hidden;
+      }
+      .description {
+        @include flex-boxed;
+        @include wrapped;
+        .author {
+          text-align: center;
+        }
+        .subtitle {
+          padding-left: 40px;
+          flex: 1;
+        }
+      }
+    }
+    .botBannerLogo {
+      width: 40%;
+      @include flex-boxed;
+      justify-content: center;
+      flex-direction: column;
+      @include md-screen {
+        margin-top: 50px;
+        width: 100%;
+      }
+      .rows {
+        @include flex-boxed;
+        justify-content: center;
+        overflow: hidden;
+        > div:hover {
+          cursor: pointer;
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+  .botBannerBtn {
+    @include flex-boxed;
+    position: relative;
+    flex-direction: column;
+    height: 200px;
+    @include sm-screen {
+      font-size: $text-lg;
+    }
+    .background5 {
+      @include wrapped;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .descriptionBtn {
+      position: absolute;
+      @include flex-boxed;
+      flex-direction: column;
+      top: 20%;
+      > div {
+        color: white;
+        font-size: $text-xsl;
+        text-align: center;
+        @include sm-screen {
+          font-size: $text-lg;
+        }
+        @include xs-screen {
+          font-size: $text-sm;
+        }
+      }
+      .btn {
+        margin-top: 20px;
+        background-color: $lime;
+        padding: 5px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        @include sm-screen {
+          margin-top: 5px;
+        }
+        &:hover {
+          background-color: $darkLime;
+        }
+      }
+    }
+  }
+}
+.events {
+  @include wrapped-2;
+  @include flex-boxed;
+  @include md-screen {
+    flex-direction: column;
+  }
+  .eventCard {
+    width: 45%;
+    @include md-screen {
+      width: 90%;
+      margin-top: 50px;
+    }
+    @include md-screen {
+      flex-direction: column;
+    }
+    @include flex-boxed;
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 5px;
+      padding: 5px;
+      border: 5px dashed $darkViolet;
+    }
+    .eventInfo {
+      margin-left: 10px;
+      > div {
+        margin-top: 15px;
+      }
+      .eventTitle {
+        font-size: $text-lg;
+        color: $carbon;
+      }
+      .eventSub {
+        font-size: $text-lg;
+        color: $darkViolet;
+        cursor: pointer;
+        border-radius: 50px;
+        padding: 5px;
+        width: 120px;
+        &:hover {
+          background-color: $darkViolet;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.eventPages {
+  @include flex-boxed;
+  margin-top: 50px;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  span {
+    padding: 5px 10px;
+    border: 1px solid $violet;
+    border-radius: 20px;
+    margin: 0px 4px;
+    &:nth-child(2) {
+      padding: 5px 15px;
+      background-color: $violet;
+    }
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $violet;
+    }
+  }
+}
+footer {
+  position: relative;
+  width: 100%;
+  height: 1130px;
+  overflow: hidden;
+  background-color: $lightViolet;
+  @include md-screen {
+    height: 1800px;
+  }
+  .waves {
+    position: absolute;
+    width: 100;
+    top: 0;
+  }
+  .wave1 {
+    position: absolute;
+    width: 120%;
+    height: 300px;
+    bottom: -2%;
+    z-index: -3;
+    @include animate;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    @include md-screen {
+      width: 140%;
+      height: 200px;
+      bottom: -2%;
+    }
+    @include sm-screen {
+      width: 180%;
+      height: 200px;
+      bottom: -2%;
+    }
+  }
+  .wave2 {
+    position: absolute;
+    width: 120%;
+    height: 500px;
+    bottom: -6%;
+    z-index: 1;
+    @include animate;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include md-screen {
+      width: 160%;
+      height: 250px;
+      bottom: -2%;
+    }
+    @include sm-screen {
+      width: 150%;
+      height: 300px;
+      bottom: -5%;
+    }
+  }
+  .wave3 {
+    overflow: hidden;
+    position: absolute;
+    width: 180%;
+    height: 200px;
+    bottom: 0%;
+    z-index: 2;
+    @include animate;
+    img {
+      width: 100%;
+      height: 200%;
+    }
+
+    @include md-screen {
+      width: 200%;
+      height: 90px;
+      bottom: -0%;
+    }
+    @include sm-screen {
+      width: 200%;
+      height: 100px;
+      bottom: 0%;
+    }
+  }
+  .search {
+    @include flex-boxed;
+    @include wrapped-3;
+    margin-top: 20%;
+    margin-bottom: 100px;
+    flex-direction: column;
+    .searchField {
+      @include flex-boxed;
+      width: 100%;
+      flex-direction: column;
+      position: relative;
+      input {
+        margin-top: 50px;
+        width: 85%;
+        padding: 20px 40px;
+        border: 5px solid $violet;
+        border-radius: 50px;
+        @include sm-screen {
+          width: 70%;
+        }
+      }
+      button {
+        position: absolute;
+        background-color: $violet;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 10px;
+        width: 160px;
+        right: 5%;
+        bottom: 12%;
+        cursor: pointer;
+        &:hover {
+          background-color: $darkViolet;
+          transform: scale(1.1);
+        }
+        @include sm-screen {
+          width: 120px;
+          right: 8%;
+        }
+      }
+    }
+  }
+  .contacts {
+    @include flex-boxed;
+    @include wrapped;
+    align-items: flex-start;
+    color: rgba(0, 0, 0, 0.858);
+    > div {
+      @include md-screen {
+        margin-bottom: 20px;
+      }
+    }
+    @include md-screen {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    > div:first-child {
+      width: 25%;
+      @include md-screen {
+        width: 80%;
+      }
+    }
+    > div > div {
+      margin-top: 20px;
+    }
+    .contactTitle {
+      font-weight: bold;
+      color: $darkViolet;
+      font-size: $text-lg;
+    }
+    .contactLogoGroup {
+      @include flex-boxed;
+      flex-direction: column;
+      margin-bottom: 120px;
+      .contactLogo {
+        @include flex-boxed;
+        img {
+          width: 20px;
+          height: 20px;
+          margin: 0px 10px;
+          background-color: #daa8e3;
+          padding: 10px;
+          border-radius: 50%;
+          cursor: pointer;
+          &:hover {
+            box-shadow: 2px 2px 5px black;
+          }
+        }
+      }
+    }
+    .selectMenu {
+      select {
+        background-color: transparent;
+        padding: 10px 0px;
+        width: 200px;
+        border-color: $darkViolet;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      option {
+        background-color: $darkViolet;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.mask {
+  top: 0%;
+  width: 100%;
+  height: 300px;
+  @include md-screen {
+    height: 200px;
+  }
+  @include sm-screen {
+    height: 150px;
+  }
+  @include xs-screen {
+    height: 100px;
+  }
+  position: absolute;
+  -webkit-mask-image: url(./asset/footerWave.svg);
+  mask-image: url(./asset/footerWave.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  .dakhel {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    &.dark {
+      background-color: black;
+    }
+  }
+}
+@keyframes animated {
+  0% {
+    transform: translateX(-70px);
+  }
+  50% {
+    transform: translateX(70px);
+    transform: scale(1.1);
+  }
+  100% {
+    transform: translateX(-70px);
+  }
+}
+@keyframes blink {
+  0% {
+    background-color: black;
+    box-shadow: none;
+  }
+  100% {
+    background-color: lime;
+    box-shadow: 0px 0px 40px $lime;
+  }
+}
